@@ -40,4 +40,47 @@ router.get('/', (req, res) => {
   }).sort({_id:-1})
 })
 
+// Fetch single post
+router.get('/:id', (req, res) => {
+  var db = req.db;
+  Post.findById(req.params.id, 'name title post', function (error, post) {
+    if (error) { console.error(error); }
+    res.send(post)
+  })
+})
+
+// Update a post
+router.put('/:id', (req, res) => {
+  var db = req.db;
+  Post.findById(req.params.id, 'name title post', function (error, post) {
+    if (error) { console.error(error); }
+
+    post.name = req.body.name
+    post.title = req.body.title
+    post.post = req.body.title
+    post.save(function (error) {
+      if (error) {
+        console.log(error)
+      }
+      res.send({
+        success: true
+      })
+    })
+  })
+})
+
+// Delete a post
+router.delete('/:id', (req, res) => {
+  var db = req.db;
+  Post.remove({
+    _id: req.params.id
+  }, function(err, post){
+    if (err)
+      res.send(err)
+    res.send({
+      success: true
+    })
+  })
+})
+
 module.exports = router;

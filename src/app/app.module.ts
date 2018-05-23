@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule }   from '@angular/forms';
 
 // Angular Materials
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -33,6 +34,7 @@ import { PostDetailComponent } from './components/post-detail/post-detail.compon
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     BrowserAnimationsModule,
     MatCheckboxModule,
     MatMenuModule,
