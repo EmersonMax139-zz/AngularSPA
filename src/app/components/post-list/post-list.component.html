@@ -1,1 +1,3 @@
-{{posts | json}}
+<mat-list>
+  <mat-list-item *ngFor="let post of posts">{{post.title}}</mat-list-item>
+</mat-list>
