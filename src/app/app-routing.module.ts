@@ -18,11 +18,10 @@ const appRoutes: Routes = [
     component: NewPostComponent
   },
   {
-    path: 'id',
-    component: PostDetailComponent,
-  }
-
-  ];
+    path: 'post/:id',
+    component: PostDetailComponent
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],

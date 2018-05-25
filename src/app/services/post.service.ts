@@ -1,9 +1,18 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 
-import { Post } from '../post';
+
+
+export class Post {
+  constructor (
+    name: String,
+    title: String,
+    post: String,
+  ) { }
+}
 
 @Injectable({
   providedIn: 'root'
@@ -21,8 +30,11 @@ export class PostService {
     return this.http.post(this.apiUrl, post);
   }
 
-  // getPost(): Observable<any> {
-  //   return this.http.get<any>(this.apiUrl,  )
+  // getPost(id: number | string) {
+  //   return this.getPosts().pipe(
+  //     // (+) before `id` turns the string into a number
+  //     map(posts => posts.find(post => post.id === +id))
+  //   );
   // }
 
 
