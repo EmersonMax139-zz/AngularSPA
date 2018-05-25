@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../../services/post.service'
 import { Post } from '../../post';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-new-post',
@@ -32,12 +33,12 @@ export class NewPostComponent implements OnInit {
     // Subscription here is crucial
     this.postService.addPost(this.newPost)
       .subscribe(post => this.posts.push(post));
+    this.router.navigate(['/']);
   }
 
 
-  constructor(private postService: PostService) {
-
-  }
+  constructor(private postService: PostService,
+              private router: Router) {}
 
   // Even though the posts do not display in this component,
   // the posts must still be subscribed to in order to push
