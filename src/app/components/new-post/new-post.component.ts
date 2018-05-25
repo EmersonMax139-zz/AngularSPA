@@ -19,7 +19,8 @@ export class NewPostComponent implements OnInit {
   public newPost: Post;
 
 
-  // this function is declared in the <form> element itself,
+  // this function is attached to the
+  // <form> element itself,
   // with ngSubmit(). It is then run when the <button type="submit">
   // is clicked.
   addPost() {

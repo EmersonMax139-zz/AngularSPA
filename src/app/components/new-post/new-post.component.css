@@ -4,7 +4,7 @@
   margin-top: 80px;
 }
 
-.example-form {
+.new-post-form {
   min-width: 300px;
   max-width: 500px;
   width: 100%;
@@ -14,6 +14,14 @@
   text-align: left;
 }
 
-.example-full-width {
+.new-post-full-width {
   width: 100%;
+}
+
+.new-post-button {
+  margin-top: 20px;
+}
+
+#contentCheckbox {
+  
 }

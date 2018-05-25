@@ -21,6 +21,10 @@ export class PostService {
     return this.http.post(this.apiUrl, post);
   }
 
+  // getPost(): Observable<any> {
+  //   return this.http.get<any>(this.apiUrl,  )
+  // }
+
 
   constructor( private http: HttpClient,
   private postService: PostService ) { }
