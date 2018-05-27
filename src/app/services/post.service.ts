@@ -8,6 +8,7 @@ import { map } from 'rxjs/operators';
 
 export class Post {
   constructor (
+    id: String,
     name: String,
     title: String,
     post: String,
@@ -30,12 +31,9 @@ export class PostService {
     return this.http.post(this.apiUrl, post);
   }
 
-  // getPost(id: number | string) {
-  //   return this.getPosts().pipe(
-  //     // (+) before `id` turns the string into a number
-  //     map(posts => posts.find(post => post.id === +id))
-  //   );
-  // }
+  getPost(id: string): Observable<any> {
+    return this.http.get<any>(this.apiUrl + '/' + id);
+  }
 
 
   constructor( private http: HttpClient,
