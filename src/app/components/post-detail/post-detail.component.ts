@@ -31,12 +31,4 @@ export class PostDetailComponent implements OnInit {
       .subscribe(data => this.post$ = data);
   }
 
-  // getPost(post: Post) {
-  //   let postId = post ? post.id : null;
-  //   // Pass along the hero id if available
-  //   // so that the HeroList component can select that hero.
-  //   // Include a junk 'foo' property for fun.
-  //   this.router.navigate(['/posts', { id: postId, foo: 'foo' }]);
-  // }
-
 }
