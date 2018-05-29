@@ -21,7 +21,7 @@ export class Post {
 
 export class PostService {
 
-  private apiUrl = 'http://localhost:8081/posts';
+  private apiUrl = 'posts';
 
   getPosts(): Observable<any> {
     return this.http.get<any>(this.apiUrl);
